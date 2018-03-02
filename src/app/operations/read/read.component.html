@@ -1,0 +1,22 @@
+<button class="btn btn-primary" style="margin-top: 20px; margin-bottom: 20px" (click)="getUsers()">Get users</button>
+<div *ngIf="showError" class="alert alert-danger">
+  There's been an error to pull data! Please try again!
+</div>
+<table *ngIf="showTable" class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">First</th>
+    <th scope="col">Last</th>
+    <th scope="col">Email</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let user of users; let i=index">
+    <th scope="row">{{i+1}}</th>
+    <td>{{user.firstName}}</td>
+    <td>{{user.lastName}}</td>
+    <td>{{user.email}}</td>
+  </tr>
+  </tbody>
+</table>

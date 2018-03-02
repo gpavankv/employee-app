@@ -1,0 +1,16 @@
+<div class="container">
+    <h4 class="display-4">
+      This is an {{title}} title by String Interpolation
+    </h4>
+  <button class="btn btn-primary" style="margin-top: 20px; margin-bottom: 20px" [disabled]="isAllowed" (click)="resetTitle()">{{buttonTitle}}</button><br>
+  <button class="btn btn-primary" style="margin-top: 10px; margin-bottom: 20px" (click)="toggleIsAllow()">Click to toggle the above button</button>
+  <br>
+  Input some text here to demo 2 Way Data-Binding: <input type="text" class="form-control col-4" [(ngModel)]="textBoxInput">
+  <br>
+  <div>{{textBoxInput}}</div>
+  <br>
+  Input some text here to change the text above: <input type="text" class="form-control col-4" [(ngModel)]="textBoxInput">
+  <br>
+
+  <app-db-child [nameFromParent]="textBoxInput" (sendTitle)="receiveTitle($event)"></app-db-child>
+  </div>

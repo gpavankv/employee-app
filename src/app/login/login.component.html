@@ -1,0 +1,27 @@
+<form class="col-7" (ngSubmit)="onSubmit()" #loginForm="ngForm">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input #email="ngModel" type="email" [(ngModel)]="user.email" class="form-control" id="exampleInputEmail1" name="userName"
+           aria-describedby="emailHelp" placeholder="Enter email" required email>
+    <div *ngIf="!email.valid && email.touched" >
+      <p class="form-text text-muted" >Please enter Email</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input #password="ngModel" type="password" [(ngModel)]="user.password" class="form-control" id="exampleInputPassword1"
+           name="password" placeholder="Password" required>
+    <div *ngIf="!password.valid && password.touched" >
+      <p class="form-text text-muted" >Please enter Password</p>
+    </div>
+  </div>
+  <div *ngIf="errorDisplay">
+    <div class="alert alert-danger" role="alert">
+      <p>email or password is wrong. Please check!</p>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Submit</button>
+
+</form>
+

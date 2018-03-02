@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #339bfd;">
+  <a class="navbar-brand" href="javascript.void()" routerLink="/">Employee Portal</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="javascript.void()" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="javascript.void()" routerLink="/data-binding" routerLinkActive="active">Data Binding</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="javascript.void()" routerLink="/operations" routerLinkActive="active">Operations</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="javascript.void()" routerLink="/login" routerLinkActive="active" >Login</a>
+      </li>
+    </ul>
+    <li *ngIf="authorized" class="nav-item dropdown" style="list-style: none; color: aliceblue; font-size: large">
+      <a style="color: aliceblue; font-size: large" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {{userName}}
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="" (click)="logout()">Logout</a>
+      </div>
+    </li>
+
+ </div>
+</nav>

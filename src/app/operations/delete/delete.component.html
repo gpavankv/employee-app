@@ -1,0 +1,17 @@
+<div *ngIf="showInfo" [ngClass]="userMessageClass" style="margin-top: 20px">
+  {{userMessage}}
+</div>
+<form style="margin-top: 20px"  #deleteForm="ngForm">
+  <div class="form-group row">
+    <div class="col-md-1">
+      <label for="inputEmail4">Email</label>
+    </div>
+    <div class="col-md-4">
+      <input type="email" email (input)="change()" required #email="ngModel" [(ngModel)]="user.email" name="email" class="form-control" id="inputEmail4" placeholder="Email">
+    </div>
+  </div>
+  <div class="row">
+    <button class="btn btn-primary" type="submit" (click)="find()">Find User</button>
+    <button style="margin-left: 20px" class="btn btn-danger" [disabled]="!foundEmail || !email.valid" (click)="delete()" type="submit">Delete User</button>
+  </div>
+</form>
