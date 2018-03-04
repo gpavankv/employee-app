@@ -30,6 +30,6 @@ export class AuthGuardService implements CanActivate, CanActivateChild {
   }
 
   canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    this.canActivate(route, state);
+    return this.canActivate(route, state);
   }
 }
