@@ -16,7 +16,7 @@ const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'data-binding', component: DataBindingComponent },
-  { path: 'operations',  component: OperationsComponent, canActivate: [AuthGuardService], children: [
+  { path: 'operations',  component: OperationsComponent, canActivateChild: [AuthGuardService], children: [
       { path: 'read', component: ReadComponent},
       { path: 'create', component: CreateComponent},
       { path: 'update', component: UpdateComponent},
