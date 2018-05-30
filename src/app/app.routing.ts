@@ -21,7 +21,8 @@ const appRoutes: Routes = [
       { path: 'create', component: CreateComponent},
       { path: 'update', component: UpdateComponent},
       { path: 'delete', component: DeleteComponent},
-      { path: 'test', component: TestComponent }
+      { path: 'test', component: TestComponent },
+      { path: 'some', component: TestComponent}
     ]},
   { path: '**', component: PageNotFoundComponent}
 ];
